@@ -88,6 +88,25 @@ Ubuntu 22.04.1 LTS \n \l
 
 ⚠️ Like any system info file, this can be edited/customized — cross-check against other sources (`uname`, `/proc/version`, etc.) for accuracy.
 
+### Alternative: `/etc/os-release`
+
+Another (often more detailed) way to find the Ubuntu/distro version:
+
+```bash
+cat /etc/os-release
+```
+
+Example:
+```
+PRETTY_NAME="Ubuntu 22.04.1 LTS"
+NAME="Ubuntu"
+VERSION_ID="22.04"
+VERSION="22.04.1 LTS (Jammy Jellyfish)"
+VERSION_CODENAME=jammy
+ID=ubuntu
+ID_LIKE=debian
+```
+
 ---
 
 ## 5. `ps` — Process Status
@@ -171,3 +190,8 @@ dpkg -l
 
 - Useful for identifying outdated/vulnerable software with known public exploits.
 
+---
+
+---
+
+*Notes based on Linux OS enumeration fundamentals for privilege escalation (TryHackMe-style walkthrough).*
