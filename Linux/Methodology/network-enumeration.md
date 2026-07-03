@@ -15,6 +15,7 @@ A quick-reference guide for enumerating network interfaces and listening ports/c
 - [ ] `netstat -tpln`
 - [ ] `netstat -i`
 - [ ] `netstat -ano`
+- [ ] `ss -tlnp` / `netstat -tulnp`
 
 ---
 
@@ -194,26 +195,32 @@ ss -tpl        # equivalent of netstat -tpl
 
 ---
 
-## Quick Reference — All Commands
+## 3. Finding What Ports Are Listening
+
+To determine what ports are listening on your specific host, run one of the following diagnostic commands:
 
 ```bash
-ifconfig
-ip addr
-
-netstat -a
-netstat -at
-netstat -au
-netstat -lt
-netstat -s
-netstat -tp
-netstat -tpln
-netstat -i
-netstat -ano
-
-# modern equivalent
-ss -tpl
+ss -tlnp
 ```
 
----
+or
 
-*Notes based on Linux network enumeration fundamentals for privilege escalation (TryHackMe-style walkthrough).*
+```bash
+netstat -tulnp
+```
+
+Both will list all currently listening ports along with the associated protocol, local address, and (if run with sufficient privileges) the owning process/PID.
+
+Flag breakdown:
+
+| Flag | Meaning |
+|---|---|
+| `-t` | TCP |
+| `-u` | UDP (netstat only in this combo) |
+| `-l` | Listening sockets only |
+| `-n` | Numeric (don't resolve hostnames/services) |
+| `-p` | Show process/PID using the socket |
+
+➡️ `ss -tlnp` is the modern, faster equivalent of `netstat -tulnp` and is preferred on current Linux distributions.
+
+---
