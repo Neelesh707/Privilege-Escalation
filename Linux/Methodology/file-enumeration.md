@@ -181,49 +181,6 @@ find / -perm -u=s -type f 2>/dev/null
 
 ---
 
-## Quick Reference — All Commands
-
-```bash
-# ls
-ls -la
-
-# basic find
-find . -name flag1.txt
-find /home -name flag1.txt
-find / -type d -name config
-
-# permissions
-find / -type f -perm 0777
-find / -perm -a=x
-
-# ownership
-find /home -user frank
-
-# time-based
-find / -mtime -10
-find / -atime -10
-find / -cmin -60
-find / -amin -60
-
-# size-based
-find / -size +50M
-find / -size +100M
-
-# writable/executable folders
-find / -writable -type d 2>/dev/null
-find / -perm -222 -type d 2>/dev/null
-find / -perm -o w -type d 2>/dev/null
-find / -perm -o x -type d 2>/dev/null
-
-# dev tools
-find / -name perl*
-find / -name python*
-find / -name gcc*
-
-# wildcard sensitive file search
-find / -name pass*.txt
-
-# SUID binaries
 find / -perm -u=s -type f 2>/dev/null
 ```
 
