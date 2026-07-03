@@ -151,20 +151,3 @@ karen:x:1001:1001::/home/karen:
 ➡️ This gives a much cleaner, targeted list of actual human accounts on the system — useful for brute-force attacks or identifying escalation targets.
 
 ---
-
-## Quick Reference — All Commands
-
-```bash
-id
-id <username>
-env
-history
-sudo -l
-cat /etc/passwd
-cat /etc/passwd | cut -d ":" -f 1
-cat /etc/passwd | grep /home
-```
-
----
-
-*Notes based on Linux user enumeration fundamentals for privilege escalation (TryHackMe-style walkthrough).*
