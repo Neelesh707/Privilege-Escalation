@@ -1,4 +1,4 @@
-# TryHackMe Lab Writeup: Multi-User Privilege Escalation Chain
+# JUMP - Multi-User Privilege Escalation Chain
 
 **Target:** `10.48.184.199` (hostname: `tryhackme-2404`)
 **Goal:** Escalate from anonymous access through `recon_user → dev_user → monitor_user → ops_user → root`
